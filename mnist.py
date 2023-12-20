@@ -25,14 +25,19 @@ def allowed_file(filename):
 
 #--- renderで、エラーになるので、下記の2行を修正 20230806---これ重要！
 #--- 2回目のデプロイは、1.4.2
-#model = load_model('./model.h5')#学習済みモデルをロードする ---　元々のコード
-model = load_model('./model.h5', compile=False)    #学習済みモデルをロード, Compile=False
+model = load_model('./model.h5')#学習済みモデルをロードする ---　元々のコード
+#model = load_model('./model.h5', compile=False)    #学習済みモデルをロード, Compile=False
 
 #---- 私は研修生の時、上の行と下の行を修正したが、20230922 x0516-yoshizawa-san の
 #---- カウンセリングで森田さんは、上の行だけで治ると言った。
 #---- しかし、このファイルの一番下では、後ほど、compileしたほうが良いと言っている。
 #---- しかし、Aidemyでは、だれも必要とは言っていない。
 #model.compile(optimizer='adadelta', loss='categorical_crossentropy', metrics=['accuracy'])
+
+
+#---- 2023.12.21
+#---- renderのpythonの版数が上がったため、downgradeさせて修正するという方法にトライ
+
 
 
 @app.route('/', methods=['GET', 'POST'])
