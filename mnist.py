@@ -69,7 +69,16 @@ if __name__ == "__main__":
     app.run(host ='0.0.0.0',port = port)
 
 
+
+
+
 """
+Bardでは、
+absl-py==0.9.0 を absl-py==0.14.0
+といいている  2023.12.20
+
+
+
 compile=falseの件、GPT4では、下記の回答あり。
 
 
